@@ -9,6 +9,7 @@ part=-1
 async def on_ready():
   print("Logged in")
   print("Bot is ready")
+  hold.start()
 t0=time.time()
 lap=False
 ign=False
@@ -91,6 +92,4 @@ async def on_message(message):
 async def hold():
   chan=bot.get_channel()#put another channel id here
   await chan.send("text")
-hold.before_loop(bot.wait_until_ready())    
-hold.start()
 bot.run(token, bot=False)
